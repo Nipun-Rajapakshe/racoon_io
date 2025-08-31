@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaccoonLabs - Web Development</title>
+  <style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; opacity: 0.9; }
+
+    /* SECTIONS */
+    section { padding: 4rem 1.5rem; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+
+    /* PACKAGES */
+    .packages { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .card h3 { margin-bottom: 1rem; color: #2c3e50; }
+    .card ul li { margin: 0.5rem 0; }
+
+    /* WHY CHOOSE US */
+    .features { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+    .feature {
+      flex: 1 1 220px;
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      text-align: center;
+    }
+    .feature:hover { background: #e9ecef; }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: #2c3e50;
+      color: #fff;
+      border-radius: 10px;
+      padding: 3rem 2rem;
+    }
+    .contact a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: #f39c12;
+      border-radius: 5px;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    .contact a:hover { background: #e67e22; }
+
+    /* ANIMATION CLASSES */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🌐 Welcome to RaccoonLabs</h1>
+    <p>Your Partner in Modern, Affordable Web Development</p>
+	<a href="index2.html">Another</a>
+  </header>
+
+  <!-- PACKAGES -->
+  <section>
+    <h2>💼 Our Packages</h2>
+    <div class="packages">
+      <div class="card fade-in">
+        <h3>✅ Starter Website</h3>
+        <ul>
+          <li>Up to 3 pages</li>
+          <li>Mobile responsive design</li>
+          <li>Basic contact form</li>
+        </ul>
+      </div>
+      <div class="card fade-in">
+        <h3>✅ Business Website</h3>
+        <ul>
+          <li>Up to 6 pages</li>
+          <li>Modern responsive design</li>
+          <li>SEO-friendly structure</li>
+          <li>Contact form + basic animations</li>
+        </ul>
+      </div>
+      <div class="card fade-in">
+        <h3>✅ Premium Website</h3>
+        <ul>
+          <li>Up to 10 pages</li>
+          <li>Advanced design with custom features</li>
+          <li>SEO + speed optimization</li>
+          <li>Integration with social media & tools</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section>
+    <h2>🎯 Why Choose Us?</h2>
+    <div class="features">
+      <div class="feature fade-in">Clean, modern designs</div>
+      <div class="feature fade-in">Affordable pricing</div>
+      <div class="feature fade-in">Fast delivery</div>
+      <div class="feature fade-in">Ongoing support</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact fade-in">
+    <h2>📩 Let’s build your website today!</h2>
+    <a href="mailto:hello@raccoonlabs.com">Contact Us</a>
+  </section>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Scroll reveal effect
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
